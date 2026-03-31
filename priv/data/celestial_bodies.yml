@@ -1,0 +1,11 @@
+- name: Earth
+  slug: earth
+  gravity: 9.807
+
+- name: Moon
+  slug: moon
+  gravity: 1.62
+
+- name: Mars
+  slug: mars
+  gravity: 3.711
