@@ -27,6 +27,10 @@ defmodule NasaexWeb.Endpoint do
     only: NasaexWeb.static_paths(),
     raise_on_missing_only: code_reloading?
 
+  if Mix.env() == :dev do
+    plug Tidewave, team: [id: System.get_env("TIDEWAVE_TEAM"), token: System.get_env("TIDEWAVE_TEAM_TOKEN")]
+  end
+
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
   if code_reloading? do
