@@ -130,8 +130,7 @@ defmodule Nasaex.FuelCalculator do
     path
     |> Enum.chunk_every(@consecutive_pair_size, @sliding_window_step, :discard)
     |> Enum.with_index()
-    |> Enum.reduce_while(:ok, fn {[{prev_action, prev_slug}, {action, slug}], pair_index},
-                                  _acc ->
+    |> Enum.reduce_while(:ok, fn {[{prev_action, prev_slug}, {action, slug}], pair_index}, _acc ->
       step_num = pair_index + @first_pair_step_number
 
       cond do
