@@ -264,7 +264,7 @@ defmodule NasaexWeb.MissionLive do
   @impl true
   def render(assigns) do
     ~H"""
-    <div class="py-8">
+    <div class="py-8 px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col lg:flex-row gap-8 max-w-5xl mx-auto">
         <%!-- Main Calculator --%>
         <div class="flex-1 min-w-0">
