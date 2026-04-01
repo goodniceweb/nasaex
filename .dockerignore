@@ -1,0 +1,23 @@
+# Ignore git
+.git
+
+# Ignore build artifacts
+_build/
+deps/
+
+# Ignore node modules
+assets/node_modules/
+
+# Ignore development configs
+.envrc
+.env
+
+# Ignore IDE and editor files
+.elixir_ls/
+.vscode/
+.idea/
+
+# Docker
+Dockerfile*
+docker-compose*
+.dockerignore
