@@ -1,34 +1,14 @@
 services:
-  db:
-    image: postgres:17-alpine
-    restart: unless-stopped
-    volumes:
-      - pgdata:/var/lib/postgresql/data
-    environment:
-      POSTGRES_USER: ${POSTGRES_USER:-nasaex}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
-      POSTGRES_DB: ${POSTGRES_DB:-nasaex_prod}
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-nasaex}"]
-      interval: 5s
-      timeout: 5s
-      retries: 5
-
   app:
     build: .
     restart: unless-stopped
     ports:
       - "${PORT:-4000}:4000"
-    depends_on:
-      db:
-        condition: service_healthy
     environment:
-      DATABASE_URL: "ecto://${POSTGRES_USER:-nasaex}:${POSTGRES_PASSWORD}@db/${POSTGRES_DB:-nasaex_prod}"
       SECRET_KEY_BASE: ${SECRET_KEY_BASE:?Set SECRET_KEY_BASE in .env}
       PHX_HOST: ${PHX_HOST:-example.com}
       PORT: "4000"
       PHX_SERVER: "true"
-      POOL_SIZE: ${POOL_SIZE:-10}
 
   nginx:
     image: nginx:alpine
@@ -42,6 +22,3 @@ services:
       - /etc/ssl/cloudflare:/etc/ssl/cloudflare:ro
     depends_on:
       - app
-
-volumes:
-  pgdata:

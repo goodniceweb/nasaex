@@ -9,7 +9,6 @@ defmodule Nasaex.Application do
   def start(_type, _args) do
     children = [
       NasaexWeb.Telemetry,
-      Nasaex.Repo,
       {DNSCluster, query: Application.get_env(:nasaex, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: Nasaex.PubSub},
       # Start a worker by calling: Nasaex.Worker.start_link(arg)

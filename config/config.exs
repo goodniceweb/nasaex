@@ -7,10 +7,6 @@
 # General application configuration
 import Config
 
-config :nasaex,
-  ecto_repos: [Nasaex.Repo],
-  generators: [timestamp_type: :utc_datetime]
-
 # Configure the endpoint
 config :nasaex, NasaexWeb.Endpoint,
   url: [host: "localhost"],
