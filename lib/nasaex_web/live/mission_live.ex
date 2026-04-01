@@ -438,7 +438,9 @@ defmodule NasaexWeb.MissionLive do
                     </span>
                   </div>
                   <p>
-                    <span class="font-medium">Expected Fuel:</span> {format_number(scenario.expected_fuel)} kg
+                    <span class="font-medium">Expected Fuel:</span> {format_number(
+                      scenario.expected_fuel
+                    )} kg
                   </p>
                 </div>
                 <div class="card-actions mt-2">

@@ -30,7 +30,69 @@
       })();
     </script>
   </head>
-  <body>
-    {@inner_content}
+  <body class="flex flex-col min-h-screen">
+    <div class="flex-1">
+      {@inner_content}
+    </div>
+
+    <footer class="bg-base-200 border-t border-base-300 py-6 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-5xl mx-auto text-center text-sm text-base-content/70 space-y-2">
+        <p>
+          Built by
+          <a
+            href="https://github.com/goodniceweb"
+            class="link link-hover font-medium"
+            target="_blank"
+            rel="noopener"
+          >
+            goodniceweb
+          </a>
+          for
+          <a
+            href="https://elixirator.com/"
+            class="link link-hover font-medium"
+            target="_blank"
+            rel="noopener"
+          >
+            Elixirator
+          </a>
+        </p>
+        <p>
+          Deployed to
+          <a
+            href="https://www.hetzner.com/"
+            class="link link-hover"
+            target="_blank"
+            rel="noopener"
+          >
+            Hetzner
+          </a>
+          &middot; Provisioned by
+          <a
+            href="https://www.cloudflare.com/"
+            class="link link-hover"
+            target="_blank"
+            rel="noopener"
+          >
+            Cloudflare
+          </a>
+          &
+          <a href="https://www.docker.com/" class="link link-hover" target="_blank" rel="noopener">
+            Docker
+          </a>
+        </p>
+        <p>
+          Source code available at
+          <a
+            href="https://github.com/goodniceweb/nasaex"
+            class="link link-hover font-medium"
+            target="_blank"
+            rel="noopener"
+          >
+            github.com/goodniceweb/nasaex
+          </a>
+        </p>
+      </div>
+    </footer>
   </body>
 </html>
