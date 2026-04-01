@@ -40,6 +40,13 @@ COPY lib lib
 
 COPY assets assets
 
+# Install esbuild and tailwind binaries
+RUN mix esbuild.install --if-missing
+RUN mix tailwind.install --if-missing
+
+# Compile assets
+RUN mix assets.deploy
+
 # Compile assets
 RUN mix assets.deploy
 
