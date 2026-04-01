@@ -41,6 +41,7 @@ defmodule Nasaex.MixProject do
   defp deps do
     [
       {:bandit, "~> 1.5"},
+      {:decimal, "~> 2.0"},
       {:dns_cluster, "~> 0.2.0"},
       {:esbuild, "~> 0.10", runtime: Mix.env() == :dev},
       {:gettext, "~> 1.0"},

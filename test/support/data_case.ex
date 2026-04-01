@@ -5,13 +5,6 @@ defmodule Nasaex.DataCase do
 
   You may define functions here to be used as helpers in
   your tests.
-
-  Finally, if the test case interacts with the database,
-  we enable the SQL sandbox, so changes done to the database
-  are reverted at the end of every test. If you are using
-  PostgreSQL, you can even run database tests asynchronously
-  by setting `use Nasaex.DataCase, async: true`, although
-  this option is not recommended for other databases.
   """
 
   use ExUnit.CaseTemplate
@@ -22,7 +15,7 @@ defmodule Nasaex.DataCase do
     end
   end
 
-  setup tags do
+  setup _tags do
     :ok
   end
 end
